@@ -1,0 +1,24 @@
+<p>🎈</p>
+
+<script>
+  let balloon = document.querySelector("p");
+
+  // Set a default font size (e.g., 20px)
+  let defaultSize = 20;
+  balloon.style.fontSize = defaultSize + "px";
+
+  window.addEventListener("keydown", (event) => {
+    let currentSize = parseInt(balloon.style.fontSize); // Get current font size as an integer
+
+    if (event.key === "ArrowUp") {
+      if (currentSize < 100) {
+        balloon.style.fontSize = currentSize + 2 + "px";
+      } else {
+        balloon.textContent = "💥";
+        balloon.style.fontSize = "100px";
+      }
+    } else if (event.key === "ArrowDown") {
+      balloon.style.fontSize = currentSize - 2 + "px";
+    }
+  });
+</script>
